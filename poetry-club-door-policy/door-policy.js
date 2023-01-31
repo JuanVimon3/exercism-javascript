@@ -27,7 +27,7 @@
  * @returns {string}
  */
 export function frontDoorResponse(line) {
-  return line[0] ;
+  return line[0];
 }
 
 /**
@@ -40,7 +40,7 @@ export function frontDoorResponse(line) {
 export function frontDoorPassword(word) {
   const firstLetterUpperCase = word[0].toUpperCase();
   const firstLetterCutted = word.slice(1).toLowerCase();
-  const capitalized= firstLetterUpperCase + firstLetterCutted;
+  const capitalized = `${firstLetterUpperCase}${firstLetterCutted}`;
   return capitalized;
 }
 
