@@ -30,7 +30,7 @@ export function birdsInWeek(birdsPerDay, week) {
   let sum = 0;
   let startIndex = 7 * (week - 1);
   let endIndex = 7 * week;
-  for(let i = startIndex; i < endIndex; i++){
+  for(let i = startIndex; i < endIndex; i++) {
     sum += birdsPerDay[i];    
   }
   return sum;
