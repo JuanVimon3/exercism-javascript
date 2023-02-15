@@ -9,7 +9,7 @@
  * @returns {number} the card
  */
 export function getItem(cards, position) {
- return cards[position];
+  return cards[position];
 }
 
 /**
@@ -61,7 +61,7 @@ export function removeItem(cards, position) {
  * @returns {number[]} the cards without the removed card
  */
 export function removeItemFromTop(cards) {
- cards.pop();
+  cards.pop();
   return cards;
 }
 
