@@ -49,8 +49,9 @@ export function insertItemAtTop(cards, newCard) {
  */
 export function removeItem(cards, position) {
   cards.splice(position, 1);
-return cards;
+  return cards;
 }
+
 
 /**
  * Remove card from the end of the cards array
@@ -60,7 +61,7 @@ return cards;
  * @returns {number[]} the cards without the removed card
  */
 export function removeItemFromTop(cards) {
- cards.pop();
+  cards.pop();
   return cards;
 }
 
