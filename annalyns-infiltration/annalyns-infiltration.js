@@ -27,7 +27,7 @@
  * @return {boolean} Whether or not you can execute a fast attack.
  */
 
-export function canExecuteFastAttack(knightIsAwake) { 
+export function canExecuteFastAttack(knightIsAwake) {
   return !knightIsAwake;
 }
 
@@ -42,7 +42,7 @@ export function canExecuteFastAttack(knightIsAwake) {
  */
 export function canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake) {
   return knightIsAwake || archerIsAwake || prisonerIsAwake;
-};
+}
 
 /**
  * You'll get caught by the archer if you signal while they're awake.
@@ -54,7 +54,7 @@ export function canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake) {
  */
 export function canSignalPrisoner(archerIsAwake, prisonerIsAwake) {
   return !archerIsAwake && prisonerIsAwake;
-};
+}
 
 /**
  * The final stage in the plan: freeing Annalyn's best friend.
@@ -70,7 +70,7 @@ export function canFreePrisoner(
   knightIsAwake,
   archerIsAwake,
   prisonerIsAwake,
-  petDogIsPresent
+  petDogIsPresent,
 ) {
-  return !archerIsAwake && (petDogIsPresent ||(prisonerIsAwake && !knightIsAwake));
+  return !archerIsAwake && (petDogIsPresent || (prisonerIsAwake && !knightIsAwake));
 }
