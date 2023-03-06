@@ -22,7 +22,8 @@ export function getItem(cards, position) {
  * @returns {number[]} the cards with the change applied
  */
 export function setItem(cards, position, replacementCard) {
-  cards[position] = replacementCard;
+  const newCards = [];
+  newCards[position] = replacementCard;
   return cards;
 }
 
@@ -51,8 +52,6 @@ export function removeItem(cards, position) {
   cards.splice(position, 1);
   return cards;
 }
-
-
 /**
  * Remove card from the end of the cards array
  *
@@ -64,8 +63,6 @@ export function removeItemFromTop(cards) {
   cards.pop();
   return cards;
 }
-
-
 /**
  * Insert newCard at beginning of the cards array
  *
