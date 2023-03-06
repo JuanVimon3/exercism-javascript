@@ -13,8 +13,8 @@
 
 export function totalBirdCount(birdsPerDay) {
   let sum = 0;
-  for(let i = 0; i < birdsPerDay.length; i++) {
-    sum += birdsPerDay[i];    
+  for (let i = 0; i < birdsPerDay.length; i += 1) {
+    sum += birdsPerDay[i];
   }
   return sum;
 }
@@ -28,15 +28,13 @@ export function totalBirdCount(birdsPerDay) {
  */
 export function birdsInWeek(birdsPerDay, week) {
   let sum = 0;
-  let startIndex = 7 * (week - 1);
-  let endIndex = 7 * week;
-  for(let i = startIndex; i < endIndex; i++) {
-    sum += birdsPerDay[i];    
+  const startIndex = 7 * (week - 1);
+  const endIndex = 7 * week;
+  for (let i = startIndex; i < endIndex; i += 1) {
+    sum += birdsPerDay[i];
   }
   return sum;
 }
-
-
 /**
  * Fixes the counting mistake by increasing the bird count
  * by one for every second day.
@@ -45,10 +43,9 @@ export function birdsInWeek(birdsPerDay, week) {
  * @returns {number[]} corrected bird count data
  */
 export function fixBirdCountLog(birdsPerDay) {
-  for(let i = 0; i < birdsPerDay.length; i+=2){
-    birdsPerDay[i]++;    
+  const newBirds = [];
+  for (let i = 0; i < birdsPerDay.length; i += 2) {
+    newBirds[i] += 1;
   }
   return birdsPerDay;
 }
-
-
