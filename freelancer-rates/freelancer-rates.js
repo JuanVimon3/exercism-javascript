@@ -52,7 +52,7 @@ export function daysInBudget(budget, ratePerHour) {
  */
 export function priceWithMonthlyDiscount(ratePerHour, numDays, discount) {
   const remainingDays = numDays % 22;
-  const fullMonths = Math.floor(numDays / 22); 
+  const fullMonths = Math.floor(numDays / 22);
   const remainingTotal = remainingDays * dayRate(ratePerHour);
   const totalMonthPrice = dayRate(ratePerHour) * 22 * fullMonths;
   const totalMonthPriceWithDiscount = totalMonthPrice - (discount * totalMonthPrice);
