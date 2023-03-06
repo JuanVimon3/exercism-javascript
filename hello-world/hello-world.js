@@ -3,8 +3,8 @@
 // convenience to get you started writing code faster.
 //
 
-export function hello() {
+export default function hello() {
   return 'Hello, World!';
-};
+}
 
-console.log(hello)
+console.log(hello);
