@@ -16,9 +16,9 @@
  */
 export function translate2d(dx, dy) {
   return function result(x, y) {
-    return [dx + x, dy + y]
-  }
-} 
+    return [dx + x, dy + y];
+  };
+}
 
 /**
  * Create a function that returns a function making use of a closure to
@@ -32,8 +32,8 @@ export function translate2d(dx, dy) {
  */
 export function scale2d(sx, sy) {
   return function result(x, y) {
-    return [sx * x, sy * y]
-  }
+    return [sx * x, sy * y];
+  };
 }
 
 /**
@@ -46,31 +46,31 @@ export function scale2d(sx, sy) {
  * @returns {function} a function which takes an x, y parameter, returns the
  *  transformed coordinate pair in the form [x, y]
  */
-export function composeTransform(f,g) {
+export function composeTransform(f, g) {
   return function result(x, y) {
-    let response = f(x,y);
-    return g(response[0], response[1])
-  }
+    const response = f(x, y);
+    return g(response[0], response[1]);
+  };
 }
-    
-
 /**
  * Return a function that memoizes the last result.  If the arguments are the same as the last call,
  * then memoized result returned.
  *
- * @param {function} f the transformation function to memoize, assumes takes two arguments 'x' and 'y'
- *
- * @returns {function} a function which takes x and y arguments, and will either return the saved result
- *  if the arguments are the same on subsequent calls, or compute a new result if they are different.
+ * @param {function} f the transformation function to memoize, assumes takes two arguments
+ * 'x' and 'y'
+ * @returns {function} a function which takes x and y arguments, and will either
+ *  return the saved result
+ *  if the arguments are the same on subsequent calls, or compute a new result if they are
+ *  different.
  */
 export function memoizeTransform(f) {
-  let prevResult, prevX, prevY;
-  return function result(x,y) {
-     if(prevX !== x || prevY !== y ){
+  let prevResult; let prevX; let prevY;
+  return function result(x, y) {
+    if (prevX !== x || prevY !== y) {
       prevX = x;
       prevY = y;
-      prevResult = f(x,y);
-    } 
-  return prevResult;
- }
+      prevResult = f(x, y);
+    }
+    return prevResult;
+  };
 }
