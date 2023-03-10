@@ -1,7 +1,5 @@
 /// <reference path="./global.d.ts" />
 
-import { mapPairs } from 'core-js/core/dict';
-
 // @ts-check
 
 /**
@@ -64,11 +62,11 @@ export function updateScore(scoreBoard, player, points) {
  * @returns {Record<string, number>} updated score board
  */
 export function applyMondayBonus(scoreBoard) {
-  // eslint-disable-next-line no-restricted-syntax, guard-for-in
-  for (const i in scoreBoard) {
+  Object.keys(scoreBoard).forEach((i) => {
     // eslint-disable-next-line no-param-reassign
     scoreBoard[i] += 100;
-  } return scoreBoard;
+  });
+  return scoreBoard;
 }
 /**
  * Normalizes a score with the provided normalization function.
