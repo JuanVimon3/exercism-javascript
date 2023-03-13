@@ -12,26 +12,25 @@
  */
 export function timeToMixJuice(name) {
   let juiceTime = 0;
-  switch (name){
-    case 'Pure Strawberry Joy':  
-      juiceTime = 0.5 
+  switch (name) {
+    case 'Pure Strawberry Joy':
+      juiceTime = 0.5;
       break;
     case 'Energizer':
-      juiceTime = 1.5
-       break;
+      juiceTime = 1.5;
+      break;
     case 'Green Garden':
-      juiceTime = 1.5
-       break;
+      juiceTime = 1.5;
+      break;
     case 'Tropical Island':
-      juiceTime = 3
-       break;
+      juiceTime = 3;
+      break;
     case 'All or Nothing':
-      juiceTime = 5  
-       break;
+      juiceTime = 5;
+      break;
     default:
-      juiceTime = 2.5
-  }return juiceTime;
-   
+      juiceTime = 2.5;
+  } return juiceTime;
 }
 
 /**
@@ -46,19 +45,20 @@ export function limesToCut(wedgesNeeded, limes) {
   let currentWedges = 0;
   let limesCounter = 0;
   while ((limesCounter < limes.length) && (wedgesNeeded > currentWedges)) {
-  switch (limes[limesCounter]){
-    case 'small':
-      currentWedges  += 6
-      break
-    case 'medium':
-      currentWedges  += 8
-      break
-    case 'large':
-      currentWedges  += 10
-      break
+    // eslint-disable-next-line default-case
+    switch (limes[limesCounter]) {
+      case 'small':
+        currentWedges += 6;
+        break;
+      case 'medium':
+        currentWedges += 8;
+        break;
+      case 'large':
+        currentWedges += 10;
+        break;
     }
-       limesCounter++;  
-    }return limesCounter
+    limesCounter += limesCounter;
+  } return limesCounter;
 }
 
 /**
@@ -69,11 +69,11 @@ export function limesToCut(wedgesNeeded, limes) {
  * @returns {string[]} remaining orders after the time is up
  */
 export function remainingOrders(timeLeft, orders) {
- 
-  do{
-    let pendentOrders = timeToMixJuice(orders[0]);
+  do {
+    const pendentOrders = timeToMixJuice(orders[0]);
+    // eslint-disable-next-line no-param-reassign
     timeLeft -= pendentOrders;
-    orders.shift()
-  }while((timeLeft >0) && (orders.length > 0))
+    orders.shift();
+  } while ((timeLeft > 0) && (orders.length > 0));
   return orders;
-} 
+}
