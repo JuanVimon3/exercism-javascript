@@ -1,6 +1,6 @@
 {
   "root": true,
-  "extends": "@exercism/eslint-config-javascript",
+  "extends": "airbnb",
   "env": {
     "jest": true
   },
