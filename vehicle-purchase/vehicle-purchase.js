@@ -1,4 +1,5 @@
-// @ts-check
+/* eslint-disable consistent-return */
+// @ts-nocheck
 //
 // The line above enables type checking for this file. Various IDEs interpret
 // the @ts-check directive. It will give you helpful autocompletion when
@@ -11,13 +12,11 @@
  * @returns {boolean} whether a license is required
  */
 export function needsLicense(kind) {
-  if (kind === 'car'){
+  if (kind === 'car') {
     return true;
-  }else if (kind === 'truck'){
+  } if (kind === 'truck') {
     return true;
-  }else {
-    return false;
-  }
+  } return false;
 }
 
 /**
@@ -29,10 +28,10 @@ export function needsLicense(kind) {
  * @returns {string} a sentence of advice which option to choose
  */
 export function chooseVehicle(option1, option2) {
-  if (option1 < option2){
-    return option1 + ' is clearly the better choice.';
-  }else if (option1 > option2){
-    return option2 + ' is clearly the better choice.';
+  if (option1 < option2) {
+    return `${option1} ' is clearly the better choice.'`;
+  } if (option1 > option2) {
+    return `${option2} ' is clearly the better choice.'`;
   }
 }
 
@@ -45,13 +44,11 @@ export function chooseVehicle(option1, option2) {
  * @returns {number} expected resell price in the dealership
  */
 export function calculateResellPrice(originalPrice, age) {
- 
-  if (age < 3){
+  if (age < 3) {
     return originalPrice * 0.8;
-    }else if( age <= 10){
-      return originalPrice * 0.7;
-    }else if (age > 10){
-      return originalPrice * 0.5;
-    }
+  } if (age <= 10) {
+    return originalPrice * 0.7;
+  } if (age > 10) {
+    return originalPrice * 0.5;
   }
-  
+}
