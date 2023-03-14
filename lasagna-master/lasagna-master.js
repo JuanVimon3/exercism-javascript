@@ -1,8 +1,5 @@
 /// <reference path="./global.d.ts" />
 
-// eslint-disable-next-line no-unused-vars
-import { createUnzip } from 'zlib';
-
 // @ts-check
 
 /**
