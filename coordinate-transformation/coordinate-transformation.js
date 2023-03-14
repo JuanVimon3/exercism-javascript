@@ -64,7 +64,9 @@ export function composeTransform(f, g) {
  *  different.
  */
 export function memoizeTransform(f) {
-  let prevResult; let prevX; let prevY;
+  let prevResult; 
+  let prevX; 
+  let prevY;
   return function result(x, y) {
     if (prevX !== x || prevY !== y) {
       prevX = x;
