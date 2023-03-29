@@ -1,4 +1,3 @@
-/* eslint-disable consistent-return */
 // @ts-nocheck
 //
 // The line above enables type checking for this file. Various IDEs interpret
@@ -12,11 +11,7 @@
  * @returns {boolean} whether a license is required
  */
 export function needsLicense(kind) {
-  if (kind === 'car') {
-    return true;
-  } if (kind === 'truck') {
-    return true;
-  } return false;
+  return kind === 'car' || kind === 'truck';
 }
 
 /**
@@ -29,10 +24,9 @@ export function needsLicense(kind) {
  */
 export function chooseVehicle(option1, option2) {
   if (option1 < option2) {
-    return `${option1} ' is clearly the better choice.'`;
-  } if (option1 > option2) {
-    return `${option2} ' is clearly the better choice.'`;
+    return `${option1} is clearly the better choice.`;
   }
+  return `${option2} is clearly the better choice.`;
 }
 
 /**
@@ -48,7 +42,6 @@ export function calculateResellPrice(originalPrice, age) {
     return originalPrice * 0.8;
   } if (age <= 10) {
     return originalPrice * 0.7;
-  } if (age > 10) {
-    return originalPrice * 0.5;
   }
+  return originalPrice * 0.5;
 }
