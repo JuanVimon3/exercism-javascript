@@ -7,9 +7,7 @@ import {
   backDoorPassword,
 } from './door-policy';
 
-const recite = (poem, responseFn) => {
-  return poem.map((line) => responseFn(line));
-};
+const recite = (poem, responseFn) => poem.map((line) => responseFn(line));
 
 describe('front door response', () => {
   test('should take the first characters from SUMMER', () => {
