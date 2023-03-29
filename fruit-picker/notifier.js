@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 /**
  * @param {FruitPickerSuccess | FruitPickerError} message
  * @return void

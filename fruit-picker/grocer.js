@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 /**
  * @param {GrocerQuery} query
  * @param {GrocerOnSuccessCallback} onSuccess
