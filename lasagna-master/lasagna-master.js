@@ -54,5 +54,5 @@ export function scaleRecipe(recipe, amount) {
   for(let i in recipe){
     newRecipe[i] = recipe[i] * cant
   }
-  return newRecipe; 
+  return newRecipe;
 }
