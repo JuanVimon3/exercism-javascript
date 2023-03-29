@@ -1,6 +1,6 @@
 {
   "root": true,
-  "extends": "@exercism/eslint-config-javascript",
+  "extends": "airbnb",
   "env": {
     "jest": true
   },
@@ -10,5 +10,8 @@
       "excludedFiles": ["custom.spec.js"],
       "extends": "@exercism/eslint-config-javascript/maintainers"
     }
-  ]
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2020
+  }
 }

@@ -19,7 +19,7 @@ export function createVisitor(name, age, ticketId) {
   newVisitor.age = age
   newVisitor.ticketId = ticketId
   return newVisitor
- } 
+ }
 
 /**
  * Revokes a ticket for a visitor.
@@ -40,7 +40,7 @@ export function revokeTicket(visitor) {
  * @returns {string} ticket status
  */
 export function ticketStatus(tickets, ticketId) {
-  
+
   if(tickets[ticketId] === undefined){
     return 'unknown ticket id'
   }else if(tickets[ticketId] === null){
@@ -61,7 +61,7 @@ export function ticketStatus(tickets, ticketId) {
 export function simpleTicketStatus(tickets, ticketId) {
   if(tickets[ticketId] === null || tickets[ticketId] === undefined){
     return 'invalid ticket !!!'
-  }else {   
+  }else {
     return tickets[ticketId]
   }
 }
