@@ -30,7 +30,8 @@ export function timeToMixJuice(name) {
       break;
     default:
       juiceTime = 2.5;
-  } return juiceTime;
+  }
+  return juiceTime;
 }
 
 /**
@@ -58,7 +59,8 @@ export function limesToCut(wedgesNeeded, limes) {
         break;
     }
     limesCounter += limesCounter;
-  } return limesCounter;
+  }
+  return limesCounter;
 }
 
 /**
