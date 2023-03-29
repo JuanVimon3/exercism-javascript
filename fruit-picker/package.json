@@ -1,25 +1,25 @@
 {
-  "name": "@exercism/javascript-lasagna",
-  "description": "Exercism concept exercise on basics",
-  "author": "Derk-Jan Karrenbeld <derk-jan+github@karrenbeld.info>",
+  "name": "@exercism/javascript-fruit-picker",
+  "description": "Exercism concept exercise on callbacks",
+  "author": "Tim Austin",
   "private": true,
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/exercism/javascript",
-    "directory": "exercises/concept/lasagna"
+    "directory": "exercises/concept/fruit-picker"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.12",
+    "@babel/core": "^7.21.0",
     "@exercism/babel-preset-javascript": "^0.2.1",
     "@exercism/eslint-config-javascript": "^0.6.0",
-    "@types/jest": "^29.2.5",
-    "@types/node": "^18.11.18",
-    "babel-jest": "^29.2.2",
-    "core-js": "~3.27.1",
-    "eslint": "^8.31.0",
+    "@types/jest": "^29.4.0",
+    "@types/node": "^18.14.6",
+    "babel-jest": "^29.4.3",
+    "core-js": "~3.29.0",
+    "eslint": "^8.35.0",
     "eslint-config-airbnb": "^19.0.4",
-    "jest": "^29.3.1"
+    "jest": "^29.4.3"
   },
   "dependencies": {},
   "scripts": {
