@@ -9,8 +9,7 @@
  * @returns {Card} the first card in the deck
  */
 export function getFirstCard(deck) {
-  const amount = deck;
-  return amount[0];
+  return deck[0];
 }
 
 /**
@@ -21,8 +20,7 @@ export function getFirstCard(deck) {
  * @returns {Card} the second card in the deck
  */
 export function getSecondCard(deck) {
-  const amount = deck;
-  return amount[1];
+  return deck[1];
 }
 
 /**
@@ -33,9 +31,8 @@ export function getSecondCard(deck) {
  * @returns {Card[]} new deck with reordered cards
  */
 export function swapTopTwoCards(deck) {
-  // eslint-disable-next-line no-param-reassign
-  [deck[0], deck[1]] = [deck[1], deck[0]];
-  return deck;
+  const [first, second, ...rest] = deck;
+  return [second, first, ...rest];
 }
 
 /**
@@ -49,8 +46,7 @@ export function swapTopTwoCards(deck) {
 export function discardTopCard(deck) {
   const a = deck.shift();
   const b = deck;
-  const c = [a, ...[b]];
-  return c;
+  return [a, ...[b]];
 }
 
 // eslint-disable-next-line spaced-comment
