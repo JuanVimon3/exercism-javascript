@@ -11,11 +11,7 @@
  * @returns {Visitor} the visitor that was created
  */
 export function createVisitor(name, age, ticketId) {
-  const newVisitor = {};
-  newVisitor.name = name;
-  newVisitor.age = age;
-  newVisitor.ticketId = ticketId;
-  return newVisitor;
+  return { name, age, ticketId };
 }
 
 /**
