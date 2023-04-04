@@ -25,19 +25,10 @@ export function preparationTime(layers, time = 2) {
 }
 
 export function quantities(layers) {
-  let sauce = 0;
-  let noodles = 0;
-  let sauceCant = 0;
-  let noodlesCant = 0;
-  for (let i = 0; i < layers.length; i += 1) {
-    if (layers[i].includes('sauce')) {
-      sauceCant += 1;
-    } if (layers[i].includes('noodles')) {
-      noodlesCant += 1;
-    }
-    sauce = sauceCant * 0.2;
-    noodles = noodlesCant * 50;
-  } return { sauce, noodles };
+  return {
+    noodles: layers.filter((i) => i === 'noodles').length * 50,
+    sauce: layers.filter((i) => i === 'sauce').length * 0.2,
+  };
 }
 
 export function addSecretIngredient(friendsList, myList) {
