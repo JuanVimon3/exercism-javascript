@@ -30,7 +30,8 @@ export function timeToMixJuice(name) {
       break;
     default:
       juiceTime = 2.5;
-  } return juiceTime;
+  }
+  return juiceTime;
 }
 
 /**
@@ -45,7 +46,6 @@ export function limesToCut(wedgesNeeded, limes) {
   let currentWedges = 0;
   let limesCounter = 0;
   while ((limesCounter < limes.length) && (wedgesNeeded > currentWedges)) {
-    // eslint-disable-next-line default-case
     switch (limes[limesCounter]) {
       case 'small':
         currentWedges += 6;
@@ -56,9 +56,12 @@ export function limesToCut(wedgesNeeded, limes) {
       case 'large':
         currentWedges += 10;
         break;
+      default:
+        currentWedges = 0;
     }
-    limesCounter += limesCounter;
-  } return limesCounter;
+    limesCounter += 1;
+  }
+  return limesCounter;
 }
 
 /**
