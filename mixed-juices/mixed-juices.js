@@ -60,7 +60,8 @@ export function limesToCut(wedgesNeeded, limes) {
         currentWedges = 0;
     }
     limesCounter += 1;
-  } return limesCounter;
+  }
+  return limesCounter;
 }
 
 /**
