@@ -6,6 +6,15 @@ import {
   gtcVersion,
 } from './amusement-park';
 
+const testTickets = () => ({
+  QINS6S94: 'Hong Hsu',
+  V42NWRMQ: null,
+  A56MTX8E: null,
+  H31SAW5Q: 'Lior MacNeil',
+  M9ZTXP89: 'Kamani Ybarra',
+  YEVHK4MC: null,
+});
+
 describe('createVisitor', () => {
   test('correctly assembles the visitor object', () => {
     const expected1 = { name: 'Imran Kudrna', age: 21, ticketId: 'ECMZR67C' };
@@ -185,14 +194,3 @@ describe('gtcVersion', () => {
     expect(visitor).toEqual(expected);
   });
 });
-
-const testTickets = () => {
-  return {
-    QINS6S94: 'Hong Hsu',
-    V42NWRMQ: null,
-    A56MTX8E: null,
-    H31SAW5Q: 'Lior MacNeil',
-    M9ZTXP89: 'Kamani Ybarra',
-    YEVHK4MC: null,
-  };
-};
