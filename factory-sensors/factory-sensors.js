@@ -55,7 +55,11 @@ export function monitorTheMachine(actions) {
     if (e instanceof ArgumentError) {
       actions.alertDeadSensor();
     } else if (e instanceof OverheatingError) {
-      e.temperature <= 600 ? actions.alertOverheating() : actions.shutdown();
+      if (e.temperature <= 600) {
+        actions.alertOverheating();
+      } else {
+        actions.shutdown();
+      }
     } else {
       throw e;
     }

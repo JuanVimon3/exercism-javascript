@@ -30,7 +30,7 @@ describe('reportOverheating', () => {
 
     const getOverheatingErrorTemperature = () => {
       try {
-        reportOverheating(501);
+        return reportOverheating(501);
       } catch (error) {
         return error.temperature;
       }
