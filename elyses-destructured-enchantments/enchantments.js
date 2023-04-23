@@ -45,8 +45,7 @@ export function swapTopTwoCards(deck) {
  */
 export function discardTopCard(deck) {
   const a = deck.shift();
-  const b = deck;
-  return [a, ...[b]];
+  return [a, deck];
 }
 
 // eslint-disable-next-line spaced-comment
@@ -63,6 +62,5 @@ const FACE_CARDS = ['jack', 'queen', 'king'];
  */
 export function insertFaceCards(deck) {
   const [a, ...b] = deck;
-  const newDeck = [a, ...FACE_CARDS, ...b];
-  return newDeck;
+  return [a, ...FACE_CARDS, ...b];
 }
