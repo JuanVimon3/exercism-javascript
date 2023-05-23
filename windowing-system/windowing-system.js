@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable max-classes-per-file */
 // @ts-check
 
@@ -6,29 +7,25 @@
  * exercise in this file. Do not forget to export the entities
  * you defined so they are available for the tests.
  */
-export class Size {
-  constructor(width = 80, height = 60) {
-    this.width = width;
-    this.height = height;
-  }
-
-  resize(newWidth, newHeight) {
-    this.width = newWidth;
-    this.height = newHeight;
-  }
+export function Size(width = 80, height = 60) {
+  this.width = width;
+  this.height = height;
 }
 
-export class Position {
-  constructor(x = 0, y = 0) {
-    this.x = x;
-    this.y = y;
-  }
+Size.prototype.resize = function resize(newWidth, newHeight) {
+  this.width = newWidth;
+  this.height = newHeight;
+};
 
-  move(newX, newY) {
-    this.x = newX;
-    this.y = newY;
-  }
+export function Position(x = 0, y = 0) {
+  this.x = x;
+  this.y = y;
 }
+
+Position.prototype.move = function move(newX, newY) {
+  this.x = newX;
+  this.y = newY;
+};
 
 export class ProgramWindow {
   constructor() {
@@ -69,10 +66,10 @@ export class ProgramWindow {
     this.position.move(newPosition.x, newPosition.y);
   }
 }
-export function changeWindow(ProgramWindow) {
+export function changeWindow(programWindow) {
   const newSize = new Size(400, 300);
   const newPosition = new Position(100, 150);
-  ProgramWindow.resize(newSize);
-  ProgramWindow.move(newPosition);
-  return ProgramWindow;
+  programWindow.resize(newSize);
+  programWindow.move(newPosition);
+  return programWindow;
 }
