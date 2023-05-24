@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-param-reassign */
 /* eslint-disable max-classes-per-file */
 // @ts-check
@@ -35,35 +36,15 @@ export class ProgramWindow {
   }
 
   resize(newSize) {
-    if (newSize.width < 1) {
-      newSize.width = 1;
-    }
-    if (newSize.height < 1) {
-      newSize.height = 1;
-    }
-    if (newSize.width > this.screenSize.width) {
-      newSize.width = this.screenSize.width - this.position.x;
-    }
-    if (newSize.height > this.screenSize.height) {
-      newSize.height = this.screenSize.height - this.position.y;
-    }
-    this.size.resize(newSize.width, newSize.height);
+    const newWidth = Math.max(Math.min(this.screenSize.width - this.position.x, newSize.width), 1);
+    const newHeight = Math.max(Math.min(this.screenSize.height - this.position.y, newSize.height), 1);
+    this.size.resize(newWidth, newHeight);
   }
 
   move(newPosition) {
-    if (newPosition.x < 0) {
-      newPosition.x = 0;
-    }
-    if (newPosition.y < 0) {
-      newPosition.y = 0;
-    }
-    if (newPosition.x + this.size.width > this.screenSize.width) {
-      newPosition.x = this.screenSize.width - this.size.width;
-    }
-    if (newPosition.y + this.size.height > this.screenSize.height) {
-      newPosition.y = this.screenSize.height - this.size.height;
-    }
-    this.position.move(newPosition.x, newPosition.y);
+    const newX = Math.max(Math.min(this.screenSize.width - this.size.width, newPosition.x), 0);
+    const newY = Math.max(Math.min(this.screenSize.height - this.size.height, newPosition.y), 0);
+    this.position.move(newX, newY);
   }
 }
 export function changeWindow(programWindow) {
